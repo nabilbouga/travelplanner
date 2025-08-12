@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelPlanner - Voyage sur-mesure sans stress</title>
+    <meta name="description" content="Service de planification de voyage sur-mesure. Je crée votre carnet de voyage personnalisé selon vos envies, budget et préférences.">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="TravelPlanner - Voyage sur-mesure sans stress">
+    <meta property="og:description" content="Service de planification de voyage sur-mesure. Je crée votre carnet de voyage personnalisé selon vos envies, budget et préférences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://travelplanner.example.com">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <div class="logo">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <span class="brand-name">TravelPlanner</span>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#accueil" class="nav-link">Accueil</a>
+                    <a href="#about" class="nav-link">Un Travel Planner, c'est quoi ?</a>
+                    <a href="#services" class="nav-link">Voyage sur-mesure</a>
+                    <a href="#testimonials" class="nav-link">Retours clients</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                
+                <button class="btn-primary mobile-hidden" onclick="scrollToSection('contact')">
+                    Réserver maintenant
+                </button>
+                
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#accueil" class="mobile-nav-link" onclick="closeMobileMenu()">Accueil</a>
+                <a href="#about" class="mobile-nav-link" onclick="closeMobileMenu()">Un Travel Planner, c'est quoi ?</a>
+                <a href="#services" class="mobile-nav-link" onclick="closeMobileMenu()">Voyage sur-mesure</a>
+                <a href="#testimonials" class="mobile-nav-link" onclick="closeMobileMenu()">Retours clients</a>
+                <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+                <button class="btn-primary" onclick="scrollToSection('contact'); closeMobileMenu();">
+                    Réserver maintenant
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Votre voyage <span class="text-primary">sur-mesure</span>, sans stress
+                    </h1>
+                    <p class="hero-description">
+                        Je planifie et organise votre voyage selon vos envies, votre budget et votre manière de voyager.
+                    </p>
+                    <button class="btn-primary btn-large" onclick="scrollToSection('contact')">
+                        Commencer maintenant
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Beautiful travel destination with mountains and lake">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Un Travel Planner, c'est quoi ?</h2>
+                <p class="section-description">
+                    Un travel planner s'adapte à tes envies, ton budget et ta manière de voyager afin de créer un voyage qui te ressemble, tout en t'enlevant la charge mentale d'une organisation de voyage.
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Travel planning workspace with laptop, maps, and coffee">
+                </div>
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-icon bg-primary">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>100% sur-mesure</h3>
+                            <p>Contrairement aux agences avec des offres préconçues, chaque voyage est unique et adapté à vos besoins spécifiques.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon bg-secondary">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Aucune commission</h3>
+                            <p>Je ne touche pas de commission des prestataires. Vous payez uniquement mes services de conseil.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon bg-accent">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Liberté totale</h3>
+                            <p>Vous gérez vos propres réservations avec les liens que je vous fournis. Aucun intermédiaire.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-icons">
+                <div class="service-icon">
+                    <div class="icon-circle bg-primary">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <span>Vol</span>
+                </div>
+                <div class="service-icon">
+                    <div class="icon-circle bg-secondary">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <span>Hébergement</span>
+                </div>
+                <div class="service-icon">
+                    <div class="icon-circle bg-accent">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span>Activités</span>
+                </div>
+                <div class="service-icon">
+                    <div class="icon-circle bg-primary">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <span>Transports</span>
+                </div>
+                <div class="service-icon">
+                    <div class="icon-circle bg-secondary">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span>Bons plans</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Qu'est-ce qui est inclus ?</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon bg-primary">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Transport</h3>
+                    <p>Recherche du moyen de transport pour arriver à destination (avion, train, voiture, bateau)</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon bg-secondary">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Hébergement</h3>
+                    <p>Recherche du logement selon vos critères et vos préférences personnelles</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon bg-accent">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Programme journalier</h3>
+                    <p>Élaboration d'un programme au jour le jour, comprenant activités et visites, avec leurs prix</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon bg-primary">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Sur place</h3>
+                    <p>Recherche du moyen de transport le plus adapté pour se déplacer (transports en commun, location, etc)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comment ça marche ?</h2>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number bg-primary">1</div>
+                    <h3>Choisissez votre formule</h3>
+                    <p>Sélectionnez la formule qui correspond le mieux à vos besoins de voyage</p>
+                </div>
+                <div class="step">
+                    <div class="step-number bg-secondary">2</div>
+                    <h3>Remplissez le formulaire</h3>
+                    <p>Partagez-moi vos envies, votre budget et vos préférences de voyage</p>
+                </div>
+                <div class="step">
+                    <div class="step-number bg-accent">3</div>
+                    <h3>Recevez votre carnet</h3>
+                    <p>Recevez votre carnet de voyage PDF complet sous 2 à 3 jours avec tous les liens de réservation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Formules & Tarifs</h2>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title text-primary">Formule 1 — FocustTrip</h3>
+                    <p class="pricing-description">
+                        Je planifie ton voyage sur-mesure vers une destination unique, avec les meilleurs bons plans, pour un séjour sans stress et à petit prix.
+                    </p>
+                    <div class="pricing-options">
+                        <div class="price-option">
+                            <span>Séjour 1 à 7 jours</span>
+                            <span class="price text-primary">35€</span>
+                        </div>
+                        <div class="price-option">
+                            <span>Séjour 7 à 30 jours</span>
+                            <span class="price text-primary">55€</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary btn-full" onclick="scrollToSection('contact')">
+                        Commander maintenant
+                    </button>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Populaire</div>
+                    <h3 class="pricing-title text-secondary">Formule 2 — Multiventure</h3>
+                    <p class="pricing-description">
+                        Organise ton road trip ou ton multicity trip clé en main : plusieurs étapes, découvertes variées, et itinéraire optimisé selon tes envies.
+                    </p>
+                    <div class="pricing-options">
+                        <div class="price-option">
+                            <span>Séjour 1 à 7 jours</span>
+                            <span class="price text-secondary">50€</span>
+                        </div>
+                        <div class="price-option">
+                            <span>Séjour 7 à 30 jours</span>
+                            <span class="price text-secondary">70€</span>
+                        </div>
+                        <div class="price-option">
+                            <span>Road trip 1 à 15 jours</span>
+                            <span class="price text-secondary">65€</span>
+                        </div>
+                        <div class="price-option">
+                            <span>Road trip 15 à 30 jours</span>
+                            <span class="price text-secondary">85€</span>
+                        </div>
+                    </div>
+                    <button class="btn-secondary btn-full" onclick="scrollToSection('contact')">
+                        Commander maintenant
+                    </button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Formule 3 — Flexiescape</h3>
+                    <p class="pricing-description">
+                        Indécis·e sur ta prochaine destination ? Je crée pour toi un voyage personnalisé, en fonction de ton humeur et de tes envies — aventure, culture, détente, à toi de choisir !
+                    </p>
+                    <div class="pricing-options">
+                        <div class="price-option">
+                            <span>Voyage personnalisé</span>
+                            <span class="price">Sur mesure</span>
+                        </div>
+                    </div>
+                    <button class="btn-dark btn-full" onclick="scrollToSection('contact')">
+                        Me contacter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Indiquez-moi vos exigences ✨</h2>
+                <p class="section-description">
+                    Remplissez le formulaire ci-dessous pour recevoir votre carnet de voyage personnalisé
+                </p>
+            </div>
+
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" id="prenom" name="prenom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">Nom de famille *</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="aeroport">Aéroport de départ</label>
+                            <input type="text" id="aeroport" name="aeroport">
+                        </div>
+                        <div class="form-group">
+                            <label for="formule">Formule choisie *</label>
+                            <select id="formule" name="formule" required>
+                                <option value="">Choisissez une option</option>
+                                <option value="focustrip">Formule 1 — FocustTrip</option>
+                                <option value="multiventure">Formule 2 — Multiventure</option>
+                                <option value="flexiescape">Formule 3 — Flexiescape</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Votre / vos destination(s) *</label>
+                        <textarea id="destination" name="destination" rows="3" 
+                                  placeholder="Ou me laisser carte blanche en m'indiquant ce que vous recherchez" required></textarea>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="budget">Budget par personne</label>
+                            <input type="text" id="budget" name="budget">
+                        </div>
+                        <div class="form-group">
+                            <label for="dates">Vos dates</label>
+                            <input type="text" id="dates" name="dates">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personnes">Nombre de personnes et leurs âges</label>
+                        <input type="text" id="personnes" name="personnes">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="envies">Envies et exigences souhaitées</label>
+                        <textarea id="envies" name="envies" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary btn-full btn-large" id="submitBtn">
+                            Envoyer ma demande
+                        </button>
+                        <button type="button" class="btn-whatsapp btn-full" onclick="sendWhatsApp()">
+                            <i class="fab fa-whatsapp"></i>
+                            Discuter sur WhatsApp
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Retours clients</h2>
+                <p class="section-description">
+                    Découvrez ce que nos voyageurs pensent de nos services
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b9a9ac4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
+                             alt="Marie L." class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Marie L.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Service exceptionnel ! Mon voyage en Thaïlande était parfaitement organisé. Chaque détail était pensé et les recommandations étaient excellentes."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
+                             alt="Thomas K." class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Thomas K.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Gain de temps énorme ! Au lieu de passer des heures à organiser mon road trip en Islande, j'ai reçu un carnet complet en 3 jours. Parfait !"</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
+                             alt="Sarah & Alex" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Sarah & Alex</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Notre lune de miel au Japon était magique grâce aux recommandations personnalisées. Le rapport qualité-prix est imbattable !"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <span class="brand-name">TravelPlanner</span>
+                    </div>
+                    <p>Votre spécialiste en planification de voyage sur-mesure. Créons ensemble le voyage de vos rêves.</p>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> contact@travelplanner.fr</p>
+                        <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelPlanner. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Merci !</h2>
+            <p>Votre demande a été envoyée avec succès. Je vous répondrai sous 24h.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
