@@ -120,7 +120,7 @@ function sendWhatsApp() {
     const encodedMessage = encodeURIComponent(message);
     
     // WhatsApp phone number (replace with your actual number)
-    const phoneNumber = '33123456789'; // Replace with your WhatsApp number
+    const phoneNumber = '33651653170'; // Replace with your WhatsApp number
     
     // Open WhatsApp
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
