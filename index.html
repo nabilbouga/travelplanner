@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelPlanner - Voyage sur-mesure sans stress</title>
+    <title>Plango - Voyage sur-mesure sans stress</title>
     <meta name="description" content="Service de planification de voyage sur-mesure. Je crée votre carnet de voyage personnalisé selon vos envies, budget et préférences.">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="TravelPlanner - Voyage sur-mesure sans stress">
+    <meta property="og:title" content="Plango - Voyage sur-mesure sans stress">
     <meta property="og:description" content="Service de planification de voyage sur-mesure. Je crée votre carnet de voyage personnalisé selon vos envies, budget et préférences.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://travelplanner.example.com">
+    <meta property="og:url" content="https://plango.example.com">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +19,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajout du style pour le bouton WhatsApp */
+        .whatsapp-btn{
+          position: fixed;
+          left: 18px;
+          bottom: 18px;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background: #25D366;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+          text-decoration: none;
+          z-index: 9999;
+          transition: transform .18s ease, box-shadow .18s ease;
+          -webkit-tap-highlight-color: transparent;
+        }
+        .whatsapp-btn:active { transform: scale(.96); }
+        .whatsapp-btn:hover  { box-shadow: 0 10px 22px rgba(0,0,0,0.22); transform: translateY(-2px); }
+
+        .whatsapp-btn::after{
+          content: "";
+          position: absolute;
+          width: 72px;
+          height: 72px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%,-50%);
+          border-radius: 50%;
+          background: rgba(37,211,102,0.12);
+          animation: pulse 2.6s infinite;
+          z-index: -1;
+        }
+        @keyframes pulse{
+          0% { transform: translate(-50%,-50%) scale(.9); opacity:.9 }
+          70%{ transform: translate(-50%,-50%) scale(1.4); opacity:0 }
+          100%{ transform: translate(-50%,-50%) scale(1.6); opacity:0 }
+        }
+
+        @media (max-width: 360px){
+          .whatsapp-btn{ width:50px; height:50px; left:12px; bottom:12px; }
+          .whatsapp-btn::after{ width:64px; height:64px; }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -27,9 +73,9 @@
             <div class="nav-container">
                 <div class="nav-brand">
                     <div class="logo">
-                        <i class="fas fa-plane"></i>
+                        <img src="images/logo.jpeg" alt="Plango Logo" class="logo-img">
                     </div>
-                    <span class="brand-name">TravelPlanner</span>
+                    <span class="brand-name">Plango</span>
                 </div>
                 
                 <div class="nav-links">
@@ -249,13 +295,10 @@
                     </p>
                     <div class="pricing-options">
                         <div class="price-option">
-                            <span>Séjour 1 à 7 jours</span>
+                            <span>Séjour </span>
                             <span class="price text-primary">35€</span>
                         </div>
-                        <div class="price-option">
-                            <span>Séjour 7 à 30 jours</span>
-                            <span class="price text-primary">55€</span>
-                        </div>
+                       
                     </div>
                     <button type="button" class="btn-whatsapp btn-full" onclick="sendWhatsApp()">
                             <i class="fab fa-whatsapp"></i>
@@ -271,21 +314,10 @@
                     </p>
                     <div class="pricing-options">
                         <div class="price-option">
-                            <span>Séjour 1 à 7 jours</span>
-                            <span class="price text-secondary">50€</span>
+                            <span>Séjour </span>
+                            <span class="price text-secondary">55€</span>
                         </div>
-                        <div class="price-option">
-                            <span>Séjour 7 à 30 jours</span>
-                            <span class="price text-secondary">70€</span>
-                        </div>
-                        <div class="price-option">
-                            <span>Road trip 1 à 15 jours</span>
-                            <span class="price text-secondary">65€</span>
-                        </div>
-                        <div class="price-option">
-                            <span>Road trip 15 à 30 jours</span>
-                            <span class="price text-secondary">85€</span>
-                        </div>
+                       
                     </div>
                     <button type="button" class="btn-whatsapp btn-full" onclick="sendWhatsApp()">
                             <i class="fab fa-whatsapp"></i>
@@ -301,7 +333,7 @@
                     <div class="pricing-options">
                         <div class="price-option">
                             <span>Voyage personnalisé</span>
-                            <span class="price">Sur mesure</span>
+                            <span class="price">76€</span>
                         </div>
                     </div>
                     <button type="button" class="btn-whatsapp btn-full" onclick="sendWhatsApp()">
@@ -475,7 +507,7 @@
                         <div class="logo">
                             <i class="fas fa-plane"></i>
                         </div>
-                        <span class="brand-name">TravelPlanner</span>
+                        <span class="brand-name">Plango</span>
                     </div>
                     <p>Votre spécialiste en planification de voyage sur-mesure. Créons ensemble le voyage de vos rêves.</p>
                 </div>
@@ -483,8 +515,8 @@
                 <div class="footer-contact">
                     <h3>Contact</h3>
                     <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> contact@travelplanner.fr</p>
-                        <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                        <p><i class="fas fa-envelope"></i> contact@plango.fr</p>
+                        <p><i class="fas fa-phone"></i> +33651653170</p>
                     </div>
                 </div>
 
@@ -499,7 +531,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 TravelPlanner. Tous droits réservés.</p>
+                <p>&copy; 2025 Plango. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -512,7 +544,21 @@
             <p>Votre demande a été envoyée avec succès. Je vous répondrai sous 24h.</p>
         </div>
     </div>
-
+    
+    <!-- WhatsApp Floating Button -->
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/212600000000?text=Bonjour%20je%20veux%20informations"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contact us on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+        <path fill="#fff" d="M20.52 3.48A11.9 11.9 0 0012 0C5.37 0 .01 5.37.01 12.01c0 2.12.55 4.16 1.6 5.97L0 24l6.28-1.63A11.96 11.96 0 0012 24c6.63 0 12-5.37 12-11.99 0-3.21-1.25-6.22-3.48-8.53zM12 21.6c-1.1 0-2.18-.2-3.18-.6l-.23-.09L4 20l.9-4.53-.13-.24A8.4 8.4 0 013.6 12.01c0-4.66 3.79-8.45 8.46-8.45 2.26 0 4.39.88 6 2.48 1.6 1.6 2.48 3.74 2.48 6 0 4.66-3.79 8.46-8.45 8.46z"/>
+        <path fill="#fff" d="M17.2 14.1c-.29-.15-1.71-.84-1.97-.93-.26-.1-.45-.15-.64.15s-.73.93-.9 1.12c-.16.19-.33.21-.61.07-.27-.15-1.15-.43-2.19-1.36-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.33.41-.49.14-.16.18-.27.28-.45.09-.19.04-.35-.02-.49-.07-.14-.64-1.54-.88-2.12-.23-.56-.47-.48-.64-.49l-.55-.01c-.18 0-.47.07-.72.34-.26.27-1 1-1 2.43 0 1.42 1.02 2.8 1.16 3 .14.21 2.01 3.18 4.88 4.37 2.86 1.2 2.86.8 3.37.75.51-.05 1.65-.67 1.88-1.32.23-.66.23-1.22.16-1.33-.07-.11-.26-.17-.55-.32z"/>
+      </svg>
+    </a>
+     
     <script src="script.js"></script>
 </body>
 </html>
