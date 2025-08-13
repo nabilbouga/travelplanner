@@ -634,7 +634,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-brand p {
-    color: #a0aec0;
+    color: #b5c1d1ff;
     max-width: 400px;
 }
 
@@ -645,7 +645,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-info p {
-    color: #a0aec0;
+    color: #f0ebe9ff;
     margin-bottom: 0.5rem;
 }
 
